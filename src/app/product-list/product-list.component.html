@@ -1,0 +1,26 @@
+<table class="table" *ngIf='products && products.length'>
+  <thead>
+  <tr>
+    <td>Name</td>
+    <td>Code</td>
+    <td>Release date</td>
+    <td>Description</td>
+    <td>Price</td>
+    <td>StartRating</td>
+    <td></td>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let product of products'>
+      <td>{{ product.productName }}</td>
+      <td>{{ product.productCode }}</td>
+      <td>{{ product.releaseDate }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.starRating }}</td>
+      <td><img width="50px" src="{{ product.imageUrl }}"></td>
+    </tr>
+  </tbody>
+</table>
+
+<!--<pre>{{ products | json }}</pre>-->
