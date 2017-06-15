@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ReversePipe } from 'app/reverse.pipe';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
+
 export class ProductListComponent implements OnInit {
   products: any[] = [
     {
@@ -59,10 +61,17 @@ export class ProductListComponent implements OnInit {
     }
   ]
 
+  displayImg : boolean = true;
+  toggleText : string = 'Hide Images';
+  listFilter : string = 'cart';
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleImage(): void {
+    this.displayImg = !this.displayImg;
+    this.toggleText = this.displayImg ? "Hide Images" : "Display Images";
+  }
 }

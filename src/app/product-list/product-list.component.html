@@ -1,3 +1,6 @@
+<button class="btn btn-primary" (click)="toggleImage()">{{ toggleText }}</button>
+<input [(ngModel)]='listFilter' type="text" value="cart">
+<p>{{ listFilter | reverse }}</p>
 <table class="table" *ngIf='products && products.length'>
   <thead>
   <tr>
@@ -18,7 +21,7 @@
       <td>{{ product.description }}</td>
       <td>{{ product.price }}</td>
       <td>{{ product.starRating }}</td>
-      <td><img width="50px" src="{{ product.imageUrl }}"></td>
+      <td><img width="50px" [src]='product.imageUrl' *ngIf='displayImg'></td>
     </tr>
   </tbody>
 </table>
