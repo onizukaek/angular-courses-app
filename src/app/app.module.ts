@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ReversePipe } from './reverse.pipe';
+import { ProductFilterPipe } from './product-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ReversePipe } from './reverse.pipe';
     HeaderComponent,
     ProductListComponent,
     ReversePipe,
+    ProductFilterPipe,
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@
   </tr>
   </thead>
   <tbody>
-    <tr *ngFor='let product of products'>
+    <tr *ngFor='let product of products | productFilter:listFilter'>
       <td>{{ product.productName }}</td>
       <td>{{ product.productCode }}</td>
       <td>{{ product.releaseDate }}</td>
