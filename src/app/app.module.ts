@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ReversePipe } from './reverse.pipe';
-import { ProductFilterPipe } from './product-filter.pipe';
+import { HeaderComponent } from './modules/layout/header/header.component';
+import { ProductListComponent } from './modules/product/product-list/product-list.component';
+import { ReversePipe } from './shared/pipes/reverse.pipe';
+import { ProductFilterPipe } from './shared/pipes/product-filter.pipe';
 
 @NgModule({
   declarations: [
