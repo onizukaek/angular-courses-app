@@ -22,7 +22,11 @@
       <td></td>
       <td>{{ product.description }}</td>
       <td>{{ product.price }}</td>
-      <td>{{ product.starRating }}</td>
+      <td>
+        <app-star-rating [rating]="product.starRating" (ratingClicked)="product.starRating = $event">
+
+        </app-star-rating>
+      </td>
       <td><img width="50px" [src]='product.imageUrl' *ngIf='displayImg'></td>
     </tr>
   </tbody>

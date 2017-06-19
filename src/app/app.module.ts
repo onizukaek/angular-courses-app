@@ -8,7 +8,7 @@ import { HeaderComponent } from './modules/layout/header/header.component';
 import { ProductListComponent } from './modules/product/product-list/product-list.component';
 import { ReversePipe } from './shared/pipes/reverse.pipe';
 import { ProductFilterPipe } from './modules/product/product-list/product-filter.pipe';
-import { StarRatingComponent } from './src/app/shared/components/star-rating/star-rating.component';
+import { StarRatingComponent } from './shared/components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
