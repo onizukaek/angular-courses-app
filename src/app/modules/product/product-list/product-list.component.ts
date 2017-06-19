@@ -8,6 +8,11 @@ import { IProduct } from './product';
 })
 
 export class ProductListComponent implements OnInit {
+
+  displayImg: boolean = true;
+  toggleText: string  = 'Hide Images';
+  listFilter = '';
+  categoryFilter: 'immediat' | 'differe' | 'all';
   products: Array<IProduct> = [
     {
       'id': 1,
@@ -60,10 +65,6 @@ export class ProductListComponent implements OnInit {
       'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png'
     }
   ];
-
-  displayImg = true;
-  toggleText = 'Hide Images';
-  listFilter = 'cart';
 
   constructor() { }
 
