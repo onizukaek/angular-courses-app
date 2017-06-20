@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../../shared/models/product';
 import { ProductService } from '../../../shared/models/product.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-product-list',
@@ -11,7 +12,7 @@ import { ProductService } from '../../../shared/models/product.service';
 export class ProductListComponent implements OnInit {
 
   public toggleText: string  = 'Hide Images';
-  public products: IProduct[];
+  public products: Observable<IProduct[]>;
   private _displayImg: boolean = true;
 
   listFilter = '';

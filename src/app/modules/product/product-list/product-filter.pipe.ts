@@ -8,9 +8,11 @@ export class ProductFilterPipe implements PipeTransform {
 
   transform(products: IProduct[], filter: string): IProduct[] {
     filter = filter.toLowerCase();
-    return products.filter(
-      product => product.productName.toLowerCase().startsWith(filter)
-    );
+    if (Array.isArray(products)){
+      return products.filter(
+        product => product.productName.toLowerCase().startsWith(filter)
+      );
+    }
   }
 
 }
