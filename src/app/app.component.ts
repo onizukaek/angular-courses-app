@@ -9,5 +9,5 @@ import { ProductService } from './shared/models/product.service';
 })
 
 export class AppComponent {
-  title = 'app works!';
+  title = 'Product management';
 }
