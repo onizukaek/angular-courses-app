@@ -23,11 +23,12 @@
 
           <div class="action">
             <button class="add-to-cart btn btn-default" type="button">add to cart</button>
-            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+            <button routerLink="../">Back to products</button>
+            <button [routerLink]="['../', getNextProductId(product.id)]">Next product {{ getNextProductId(product.id) }}</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<button routerLink="../">Back to products</button>
+

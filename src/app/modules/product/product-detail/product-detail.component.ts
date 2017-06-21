@@ -10,6 +10,7 @@ import {IProduct} from '../../../shared/models/product';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
+
 export class ProductDetailComponent implements OnInit {
 
   public product: IProduct;
@@ -26,4 +27,7 @@ export class ProductDetailComponent implements OnInit {
       .subscribe(product => this.product = product);
   }
 
+  getNextProductId(id: number) {
+    return id + 1;
+  }
 }
