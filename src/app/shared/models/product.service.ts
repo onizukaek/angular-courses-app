@@ -21,8 +21,8 @@ export class ProductService {
       .catch(this._handleError('Product was not found'));
   }
 
-  get(id: string): Observable<IProduct> {
-    return this._httpService.get(this._productURL + '/' + id)
+  get(id: number): Observable<IProduct> {
+    return this._httpService.get(this._productURL + '/' + String(id))
       .do((res: Response) => console.log(`GET query to '${res.url}':'${res.status}'`))
       .map(res => res.json())
       .catch(this._handleError('Product was not found'));

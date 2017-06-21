@@ -12,9 +12,11 @@ import { ReversePipe } from './shared/pipes/reverse.pipe';
 import { ProductFilterPipe } from './modules/product/product-list/product-filter.pipe';
 import { StarRatingComponent } from './shared/components/star-rating/star-rating.component';
 import { ProductService } from './shared/models/product.service';
+import { ProductDetailResolve } from './shared/resolves/product.resolve';
 import { WelcomeComponent } from './modules/welcome/welcome.component';
 import { ProductComponent } from './modules/product/product.component';
 import { ProductDetailComponent } from './modules/product/product-detail/product-detail.component';
+import { ProductIdGuard } from './shared/guards/product-id.guard';
 
 
 @NgModule({
@@ -35,7 +37,7 @@ import { ProductDetailComponent } from './modules/product/product-detail/product
     HttpModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
-  providers: [ProductService],
+  providers: [ProductService, ProductDetailResolve, ProductIdGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { ProductService } from '../../../shared/models/product.service';
-import {Observable} from 'rxjs/Observable';
 import {IProduct} from '../../../shared/models/product';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,18 +13,18 @@ import {IProduct} from '../../../shared/models/product';
 
 export class ProductDetailComponent implements OnInit {
 
-  public product: IProduct;
+  public product: Observable<IProduct>;
 
-  constructor(private _route: ActivatedRoute, private _prodServ: ProductService) {
+  constructor(private _route: ActivatedRoute) {
     console.log(this._route.snapshot.paramMap.get('id'));
   }
 
   ngOnInit() {
-    // La bonne pratique
-    this._route.paramMap
-      .map((params: ParamMap) => params.get('id'))
-      .flatMap(id => this._prodServ.get(id))
-      .subscribe(product => this.product = product);
+    this.product = this._route.data.map(data => data.product);
+    // this._route.paramMap
+    //   .map((params: ParamMap) => params.get('id'))
+    //   .flatMap(id => this._prodServ.get(id))
+    //   .subscribe(product => this.product = product);
   }
 
   getNextProductId(id: number) {

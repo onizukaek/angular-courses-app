@@ -1,14 +1,13 @@
 <div class="container">
-  <div class="card" *ngIf='product'>
+  <div class="card" *ngIf="product | async; let product; else noProductTemplate">
+    <ng-template #noProductTemplate>
+      <h4>No product found!</h4>
+    </ng-template>
     <div class="container-fliud">
       <div class="wrapper row">
         <div class="preview col-md-6">
           <div class="preview-pic tab-content">
-            <div class="tab-pane active" id="pic-1"><img [src]="product.imageUrl"/></div>
-            <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-            <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+            <div><img [src]="product.imageUrl"/></div>
           </div>
         </div>
         <div class="details col-md-6">
@@ -22,9 +21,8 @@
           <p class="vote"></p>
 
           <div class="action">
-            <button class="add-to-cart btn btn-default" type="button">add to cart</button>
-            <button routerLink="../">Back to products</button>
-            <button [routerLink]="['../', getNextProductId(product.id)]">Next product {{ getNextProductId(product.id) }}</button>
+            <button class="btn btn-default" routerLink="../">Back to products</button>
+            <button class="btn btn-default" [routerLink]="['../', getNextProductId(product.id)]">Next product {{ getNextProductId(product.id) }}</button>
           </div>
         </div>
       </div>
